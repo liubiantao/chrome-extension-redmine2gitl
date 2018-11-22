@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Redmine2Gitlab",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Synchronize Gitlab issue with Redmine issue",
   "icons": {
     "16": "img/icon.png",
@@ -23,7 +23,7 @@
   "content_scripts": [
     {
       "matches": ["https://redmine.saybot.net/issues/*"],
-      "js": ["js/content-script.js"],
+      "js": ["js/clipboard.min.js", "js/content-script.js"],
       "run_at": "document_end"
     }
   ],
