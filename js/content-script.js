@@ -21,14 +21,59 @@ const addCopyButton = (node, title) => {
   })
 }
 
-const addRedmineIdToIssuesTitle = () => {
-  const id = document.location.pathname.replace('/issues/', '')
-  const titleNode = document.querySelector('.subject h3')
-  if (id && titleNode) {
-    titleNode.innerText += ` (REDMINE-${id})`
-    const title = titleNode.innerHTML
-    addCopyButton(titleNode, title)
+const addResolvedButtonm = id => {
+  const node = document.querySelector('.status.attribute')
+  if (node) {
+    const button = document.createElement('button')
+    button.innerText = 'Change to Resolved'
+    button.onclick = () => {
+      resolveIssue(id)
+    }
+    node.appendChild(button)
   }
 }
 
-addRedmineIdToIssuesTitle()
+const addRedmineIdToIssuesTitle = (node, id) => {
+  node.innerText += ` (REDMINE-${id})`
+  return node.innerHTML
+}
+
+const resolveIssue = id => {
+  chrome.storage.sync.get('REDMINE_API_KEY', config => {
+    const { REDMINE_API_KEY } = config
+    const data = {
+      issue: {
+        status_id: 3
+      }
+    }
+
+    if (REDMINE_API_KEY) {
+      fetch(`https://redmine.saybot.net/issues/${id}.json`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Redmine-API-Key': REDMINE_API_KEY
+        },
+        method: 'PUT',
+        body: JSON.stringify(data)
+      })
+        .then(res => {
+          if (res.ok) {
+            window.location.reload()
+          }
+        })
+        .catch(error => console.error('Error:', error))
+    }
+  })
+}
+
+const main = () => {
+  const id = document.location.pathname.replace('/issues/', '')
+  const titleNode = document.querySelector('.subject h3')
+  if (id && titleNode) {
+    const title = addRedmineIdToIssuesTitle(titleNode, id)
+    addCopyButton(titleNode, title)
+    addResolvedButtonm(id)
+  }
+}
+
+main()
