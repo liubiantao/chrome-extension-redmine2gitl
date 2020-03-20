@@ -12,7 +12,7 @@ Synchronize Gitlab issue with Redmine issue
 
 - [x] 配置页
 - [x] 自动打包发布插件
-- [ ] 在 redmine issue 旁添加按键
+- [x] 在 redmine issue 旁添加按键
 - [ ] 一键显示自己的 issue
 - [ ] 同步附件
 
