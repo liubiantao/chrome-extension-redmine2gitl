@@ -30,8 +30,6 @@
   "permissions": [
     "notifications",
     "tabs",
-    "webRequest",
-    "webRequestBlocking",
     "storage",
     "http://*/*",
     "https://*/*"
