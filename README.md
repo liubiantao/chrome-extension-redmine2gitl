@@ -1,4 +1,4 @@
-# chrome-extension-redmine2gitlab  ![.github/workflows/deploy.yml](https://github.com/liubiantao/chrome-extension-redmine2gitlab/workflows/.github/workflows/deploy.yml/badge.svg)
+# chrome-extension-redmine2gitlab  ![Publish extension in Chrome Web Store](https://github.com/liubiantao/chrome-extension-redmine2gitlab/workflows/Publish%20extension%20in%20Chrome%20Web%20Store/badge.svg)
 
 Synchronize Gitlab issue with Redmine issue
 

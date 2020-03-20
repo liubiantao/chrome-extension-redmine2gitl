@@ -20,7 +20,7 @@ jobs:
             -   name: Create ZIP archive
                 run: zip -r redmine2gitlab.zip * -x .* -x *.md
             -   name: Chrome Addon Action
-                uses: trmcnvn/chrome-addon@v1
+                uses: trmcnvn/chrome-addon@v2
                 with:
                     extension: iaoldkgblgoeoademdkmioofoohoklgc
                     zip: redmine2gitlab.zip
