@@ -1,4 +1,4 @@
-# chrome-extension-redmine2gitlab  [![CircleCI](https://circleci.com/gh/liubiantao/chrome-extension-redmine2gitlab.svg?style=svg)](https://circleci.com/gh/liubiantao/chrome-extension-redmine2gitlab)
+# chrome-extension-redmine2gitlab  ![](https://github.com/liubiantao/chrome-extension-redmine2gitlab/workflows/deploy/badge.svg)
 
 Synchronize Gitlab issue with Redmine issue
 
